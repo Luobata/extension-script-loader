@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "name": "",
+    "version": "0.0.0",
+    "description": "script loader for debug",
+    "icons": {
+        "16": "images/audit-icon.png",
+        "32": "images/audit-icon.png",
+        "48": "images/audit-icon.png",
+        "128": "images/audit-icon.png"
+    },
+    "browser_action": {
+        "default_title": "audit extension",
+        "default_popup": "popup-index.html"
+    },
+    "content_scripts": [],
+    "background": {
+        "scripts": ["dist/background.js"],
+        "persistent": true
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+    "commands": {},
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "cookies",
+        "notifications",
+        "storage",
+        "activeTab",
+        "webRequest",
+        "topSites",
+        "downloads",
+        "downloads.shelf",
+        "clipboardRead",
+        "clipboardWrite",
+        "webNavigation",
+        "webRequestBlocking",
+        "management",
+        "proxy",
+        "browsingData",
+        "nativeMessaging",
+        "tabs",
+        "activeTab",
+        "<all_urls>"
+    ],
+    "web_accessible_resources": []
+}
