@@ -1,0 +1,27 @@
+{
+    "name": "extension-script-loader",
+    "version": "1.0.0",
+    "description": "script loader for chrome extension(debug use)",
+    "main": "index.js",
+    "scripts": {
+        "dev:app": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --inline --progress --config build/webpack.config.tools.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Luobata/extension-script-loader.git"
+    },
+    "author": "Luobata",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Luobata/extension-script-loader/issues"
+    },
+    "homepage": "https://github.com/Luobata/extension-script-loader#readme",
+    "devDependencies": {
+        "webpack": "^5.68.0",
+        "webpack-dev-server": "^4.7.3",
+        "webpack-extension-reloader": "^1.1.4",
+        "webpack-hot-middleware": "^2.25.1",
+        "webpack-merge": "^5.8.0"
+    }
+}

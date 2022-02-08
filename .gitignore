@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+.DS_Store
+dev-tools/dist/
+zip/
+.idea
+output
+output_resource
+.vscode
+.env
+dev-tools/dev_generated_background_page.html
+pnpm-lock.yaml
+dev-tools/highlight.worker.js
+dev-tools/upload.worker.js
