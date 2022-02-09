@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 const ExtensionReloader = require('webpack-extension-reloader');
@@ -8,9 +8,9 @@ const assetsSubDirectory = 'dist/static/';
 const cssLoader = ['vue-style-loader', 'css-loader', 'postcss-loader'];
 
 const entries = {
-    background: '../src/background/index.ts',
+    background: './src/background/index.ts',
     content: [],
-    popup: ['../src/popup/index.ts'],
+    popup: ['./src/popup/index.ts'],
 };
 
 const plugins = [
@@ -39,6 +39,9 @@ if (process.env.NODE_ENV === 'development') {
         }),
     );
 }
+
+
+console.log(Object.values(entries));
 
 module.exports = merge(baseConfig, {
     entry: Object.assign({}, ...Object.values(entries)),

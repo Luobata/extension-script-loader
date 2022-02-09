@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "skipLibCheck": true,
+        "target": "ES5",
+        "jsx": "react",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "paths": {
+            "SRC/*": ["src/*"],
+            "@/*": ["src/components/*"],
+            "LIB/*": ["src/lib/*"],
+            "CLIB/*": ["src/components/lib/*"],
+            "EUtil/*": ["src/entry-util/*"],
+            "Const/*": ["src/const/*"]
+        }
+    },
+    "types": ["chrome", "@types/dom-mediacapture-record"],
+    "include": [
+        "index.d.ts",
+        "src/**/*.ts",
+        "src/lib/**/*.js",
+        "src/**/*.js",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": ["node_modules"]
+}
