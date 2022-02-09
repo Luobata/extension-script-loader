@@ -13,12 +13,25 @@ const entries = {
     popup: ['./src/popup/index.ts'],
 };
 
+Object.entries(entries).forEach(([key, list]) => {
+    entries[key] = Array.isArray(list)
+        ? Object.fromEntries(
+              list.map(file => {
+                  const name = /^(?:.+\/)?(.+)\.[tj]s$/.exec(file)[1];
+                  return [name, file];
+              }),
+          )
+        : {
+              [key]: path.join(__dirname, `../src/entry/${list}`),
+          };
+});
+
 const plugins = [
     new HtmlWebpackPlugin({
         inject: false,
         filename: 'index.html',
         template: 'src/template/index.html',
-        chunks: ['popup-index'],
+        chunks: ['index'],
         title: 'script loader',
         minify: {
             collapseWhitespace: true,
