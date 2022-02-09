@@ -1,4 +1,3 @@
-const fromEntries = require('object.fromentries');
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,9 +8,9 @@ const assetsSubDirectory = 'dist/static/';
 const cssLoader = ['vue-style-loader', 'css-loader', 'postcss-loader'];
 
 const entries = {
-    background: 'background/background-all.js',
+    background: '../src/background/index.ts',
     content: [],
-    popup: ['options.js', '../framework/core/popup-index.ts'],
+    popup: ['../src/popup/index.ts'],
 };
 
 const plugins = [
@@ -20,7 +19,7 @@ const plugins = [
         filename: 'index.html',
         template: 'src/template/index.html',
         chunks: ['popup-index'],
-        title: '广审插件',
+        title: 'script loader',
         minify: {
             collapseWhitespace: true,
             removeComments: true,
