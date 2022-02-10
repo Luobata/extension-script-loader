@@ -8,7 +8,7 @@ const assetsSubDirectory = 'dist/static/';
 const cssLoader = ['vue-style-loader', 'css-loader', 'postcss-loader'];
 
 const entries = {
-    background: ['./src/background/index.ts'],
+    background: ['./src/background/background.ts'],
     content: [],
     popup: ['./src/popup/index.ts'],
 };

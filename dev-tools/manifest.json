@@ -3,12 +3,7 @@
     "name": "",
     "version": "0.0.0",
     "description": "script loader for debug",
-    "icons": {
-        "16": "images/audit-icon.png",
-        "32": "images/audit-icon.png",
-        "48": "images/audit-icon.png",
-        "128": "images/audit-icon.png"
-    },
+    "icons": {},
     "browser_action": {
         "default_title": "audit extension",
         "default_popup": "popup-index.html"
