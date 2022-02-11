@@ -10,7 +10,7 @@ const cssLoader = ['vue-style-loader', 'css-loader', 'postcss-loader'];
 const entries = {
     background: ['./src/background/background.ts'],
     content: [],
-    popup: ['./src/popup/index.ts'],
+    popup: ['./src/popup/main.ts'],
 };
 
 Object.entries(entries).forEach(([key, list]) => {
@@ -31,7 +31,7 @@ const plugins = [
         inject: false,
         filename: 'index.html',
         template: 'src/template/index.html',
-        chunks: ['index'],
+        chunks: ['main'],
         title: 'script loader',
         minify: {
             collapseWhitespace: true,
@@ -52,7 +52,6 @@ if (process.env.NODE_ENV === 'development') {
         }),
     );
 }
-
 
 console.log(Object.values(entries));
 

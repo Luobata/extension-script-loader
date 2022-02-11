@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -55,7 +55,15 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                use: ['vue-loader'],
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        // options: {
+                        //     // Fixes the "vue-template-compiler" error.
+                        //     compiler: require('@vue/compiler-sfc'),
+                        // },
+                    },
+                ],
             },
             {
                 test: /\.pug$/,

@@ -6,7 +6,7 @@
     "icons": {},
     "browser_action": {
         "default_title": "audit extension",
-        "default_popup": "popup-index.html"
+        "default_popup": "index.html"
     },
     "content_scripts": [],
     "background": {
