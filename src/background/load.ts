@@ -2,10 +2,10 @@
  * @desc load content script
  */
 
-export class scriptLoader {
+export default class scriptLoader {
     constructor() {}
 
-    private async _fetchCodeInner(src: string): Promise<string> {
+    static async fetchCodeInner(src: string): Promise<string> {
         const contentRes = await fetch(src);
 
         if (contentRes.status !== 200) {
