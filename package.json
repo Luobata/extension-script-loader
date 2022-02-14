@@ -19,6 +19,7 @@
     "homepage": "https://github.com/Luobata/extension-script-loader#readme",
     "devDependencies": {
         "@babel/core": "^7.17.0",
+        "@types/chrome": "0.0.177",
         "babel-cli": "^6.26.0",
         "babel-loader": "^8.2.3",
         "cache-loader": "^4.1.0",

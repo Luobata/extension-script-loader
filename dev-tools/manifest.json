@@ -8,7 +8,14 @@
         "default_title": "audit extension",
         "default_popup": "index.html"
     },
-    "content_scripts": [],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "all_frames": true,
+            "js": ["dist/load-remote.js"],
+            "run_at": "document_idle"
+        }
+    ],
     "background": {
         "scripts": ["dist/background.js"],
         "persistent": true
