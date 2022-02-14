@@ -21,6 +21,9 @@ const testConf: contentConfig[] = [
     },
 ];
 
+// 用来生成不唯一的content key 用来通信，可以先忽略这个变量
+let id: number = 1;
+
 export default class Background {
     private _corss: ChromeCrossMessenger;
     private _loadingData: Map<string, { conf: contentConfig; code: string }> =
@@ -59,7 +62,7 @@ export default class Background {
                         v.conf.exclude_matches,
                     )
                 ) {
-                    new ContentParser(v.code, '', sender, v.conf);
+                    new ContentParser(v.code, `${id++}`, sender, v.conf);
                 }
             });
         });
