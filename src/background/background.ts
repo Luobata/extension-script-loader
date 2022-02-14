@@ -5,6 +5,7 @@
 import ChromeCrossMessenger from 'SRC/util/chrome-cross-messenger/chrome-cross-messenger';
 import { loadRemoteContent } from 'SRC/util/const';
 import ContentParser, { contentConfig } from './content-parser';
+import InjectParser from './inject-parser';
 import scriptLoader from './load';
 
 console.log('test');
@@ -47,6 +48,7 @@ export default class Background {
                 conf: v,
                 code: data,
             });
+            console.log(this._loadingData);
         });
     }
 
@@ -62,7 +64,7 @@ export default class Background {
                         v.conf.exclude_matches,
                     )
                 ) {
-                    new ContentParser(v.code, `${id++}`, sender, v.conf);
+                    new InjectParser(v.code, `${id++}`, sender, v.conf);
                 }
             });
         });
