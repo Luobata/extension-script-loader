@@ -9,14 +9,14 @@ const cssLoader = ['vue-style-loader', 'css-loader', 'postcss-loader'];
 
 const entries = {
     background: ['./src/background/background.ts'],
-    content: [],
+    content: ['./src/content-script/load-remote.ts'],
     popup: ['./src/popup/main.ts'],
 };
 
 Object.entries(entries).forEach(([key, list]) => {
     entries[key] = Array.isArray(list)
         ? Object.fromEntries(
-              list.map(file => {
+              list.map((file) => {
                   const name = /^(?:.+\/)?(.+)\.[tj]s$/.exec(file)[1];
                   return [name, file];
               }),

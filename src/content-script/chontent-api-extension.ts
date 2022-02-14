@@ -2,8 +2,6 @@
  * @desc 声明一个全局的contentGlobal扩展
  */
 
-import logger from './logger';
-
 const contentGlobalMessageBridgeStr = '__contentGlobalMessageBridgeStr';
 export const contentGlobalMessageBridgeEventStr =
     '__contentGlobalMessageBridgeEventStr';
@@ -94,6 +92,6 @@ const contentGlobal = {
 };
 
 window.contentGlobal = contentGlobal;
-window.contentLogger = logger();
+// window.contentLogger = logger();
 
 export default contentGlobal;
