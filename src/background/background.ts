@@ -27,8 +27,10 @@ let id: number = 1;
 
 export default class Background {
     private _corss: ChromeCrossMessenger;
-    private _loadingData: Map<string, { conf: contentConfig; code: string }> =
-        new Map();
+    private _loadingData: Map<
+        string,
+        { conf: contentConfig; code: string }
+    > = new Map();
 
     constructor() {
         this._corss = ChromeCrossMessenger.getInstance();
@@ -41,7 +43,7 @@ export default class Background {
         // 正常与popup通信获取，即local
         const confs: contentConfig[] = testConf;
 
-        confs.forEach(async (v) => {
+        confs.forEach(async v => {
             const data = await scriptLoader.fetchCodeInner(v.srcUrl);
 
             this._loadingData.set(v.srcUrl, {
@@ -56,7 +58,7 @@ export default class Background {
         this._corss.on(loadRemoteContent, (data, { sender }) => {
             console.log(data, sender);
             const tabUrl = sender.url;
-            this._loadingData.forEach((v) => {
+            this._loadingData.forEach(v => {
                 if (
                     ContentParser.needLoad(
                         tabUrl,
